@@ -1,0 +1,23 @@
+name: 'Purge GitHub README.md image'
+description: 'Purge image in GitHub README.md.'
+author: 'syossan27'
+
+branding:
+  icon: 'arrow-up-circle'
+  color: 'blue'
+
+inputs:
+  repository:
+    description: GitHub repository name (ex. syossan27/purge-github-readme-image)
+    required: true
+  token:
+    description: GitHub token
+    default: ${{ github.token }}
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    REPOSITORY: ${{ inputs.repository }}
+    TOKEN: ${{ inputs.token }}
