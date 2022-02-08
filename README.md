@@ -6,7 +6,7 @@ Purge GitHub README.md image
 
 ```YAML
 steps:
-  - uses: syossan27/purge-github-readme-image
+  - uses: syossan27/purge-github-readme-image@v1.0.0
     with:
       repository: ${github.repository}
       token: ${{ secrets.GITHUB_TOKEN }}
